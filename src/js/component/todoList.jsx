@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddButton from "./addButton.jsx";
 import Input from "./input.jsx";
 
 const TodoList = () => {
@@ -32,12 +33,7 @@ const TodoList = () => {
 					}}
 					onKeyPressInp={task.length > 0 ? pressEnter : null}
 				/>
-				<button
-					type="button"
-					role="button"
-					onClick={task.length > 0 ? addTask : null}>
-					Add
-				</button>
+				<AddButton onClickBut={task.length > 0 ? addTask : null} />
 			</div>
 			<div>
 				<ul>
