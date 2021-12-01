@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AddButton from "./addButton.jsx";
 import Input from "./input.jsx";
+import List from "./list.jsx";
 
 const TodoList = () => {
 	const [list, setList] = useState([]);
@@ -14,10 +15,6 @@ const TodoList = () => {
 
 	function pressEnter(ev) {
 		if (ev.key === "Enter") addTask();
-	}
-
-	function deleteTask(index) {
-		setList(list.filter((task, i) => i !== index));
 	}
 
 	return (
@@ -36,16 +33,7 @@ const TodoList = () => {
 				<AddButton onClickBut={task.length > 0 ? addTask : null} />
 			</div>
 			<div>
-				<ul>
-					{list.map((item, i) => (
-						<>
-							<li key={i}>{item}</li>
-							<button onClick={() => deleteTask(i)}>
-								Delete
-							</button>
-						</>
-					))}
-				</ul>
+				<List setList={setList} list={list} />
 			</div>
 		</div>
 	);
