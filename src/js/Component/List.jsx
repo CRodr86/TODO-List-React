@@ -10,8 +10,10 @@ const List = props => {
 		<ul>
 			{props.list.map((item, i) => (
 				<>
-					<li key={i}>{item}</li>
-					<button onClick={() => deleteTask(i)}>Delete</button>
+					<div className="task">
+						<li key={i}>{item}</li>
+						<button onClick={() => deleteTask(i)}>Delete</button>
+					</div>
 				</>
 			))}
 		</ul>

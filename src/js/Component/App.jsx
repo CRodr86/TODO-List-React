@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import AddButton from "./addButton.jsx";
-import Input from "./input.jsx";
-import List from "./list.jsx";
+import AddButton from "./AddButton.jsx";
+import Input from "./Input.jsx";
+import List from "./List.jsx";
 
 const TodoList = () => {
 	const [list, setList] = useState([]);
@@ -22,7 +22,7 @@ const TodoList = () => {
 			<div className="title">
 				<h1>TODO List</h1>
 			</div>
-			<div>
+			<div className="col">
 				<Input
 					valueInp={task}
 					onChangeInp={ev => {
