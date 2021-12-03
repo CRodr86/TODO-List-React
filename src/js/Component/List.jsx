@@ -10,9 +10,17 @@ const List = props => {
 		<ul>
 			{props.list.map((item, i) => (
 				<>
-					<div className="task">
-						<li key={i}>{item}</li>
-						<button onClick={() => deleteTask(i)}>Delete</button>
+					<div className="d-flex justify-content-center">
+						<li
+							className="d-inline my-2 mx-3 fs-4 border-bottom border-secondary border-2"
+							key={i}>
+							{item}
+						</li>
+						<button
+							className="d-inline my-2 mx-3 btn btn-danger"
+							onClick={() => deleteTask(i)}>
+							Delete
+						</button>
 					</div>
 				</>
 			))}

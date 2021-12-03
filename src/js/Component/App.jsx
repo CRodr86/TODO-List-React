@@ -18,22 +18,24 @@ const TodoList = () => {
 	}
 
 	return (
-		<div className="container todoList">
-			<div className="title">
-				<h1>TODO List</h1>
-			</div>
-			<div className="col">
-				<Input
-					valueInp={task}
-					onChangeInp={ev => {
-						setTask(ev.target.value);
-					}}
-					onKeyPressInp={task.length > 0 ? pressEnter : null}
-				/>
-				<AddButton onClickBut={task.length > 0 ? addTask : null} />
-			</div>
-			<div>
-				<List setList={setList} list={list} />
+		<div className="container">
+			<div className="row">
+				<div className="col d-flex justify-content-center">
+					<h1>TODO List</h1>
+				</div>
+				<div className="row d-flex justify-content-center m-2">
+					<Input
+						valueInp={task}
+						onChangeInp={ev => {
+							setTask(ev.target.value);
+						}}
+						onKeyPressInp={task.length > 0 ? pressEnter : null}
+					/>
+					<AddButton onClickBut={task.length > 0 ? addTask : null} />
+				</div>
+				<div>
+					<List setList={setList} list={list} />
+				</div>
 			</div>
 		</div>
 	);
